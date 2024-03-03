@@ -1,0 +1,32 @@
+﻿@page "/"
+@model TesteModel
+@{
+    ViewData["Title"] = "HomePage";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pagina inicial</h1>
+    <p>
+        Esta página foi criada para ser a nova pagina inicial.
+    </p>
+
+    <table class="table">
+        <thead>
+            <td>nome</td>
+            <td>idade</td>
+            <td>cpf</td>
+        </thead>
+        <tbody>
+            @foreach (var pessoa in Model.pessoas)
+            {                
+                <tr>
+                    <td>@pessoa.Nome</td>
+                    <td>@pessoa.Idade</td>
+                    <td>@pessoa.Cpf</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p class="float-end">Total de pessoas: @Model.pessoas.Count</p>
+</div>

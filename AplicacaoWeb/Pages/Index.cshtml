@@ -1,0 +1,33 @@
+﻿@page "/index"
+@model IndexModel
+@{
+    ViewData["Title"] = "Pagina do ALUNO";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo!</h1>
+    <p>
+        “A felicidade de sua vida depende da qualidade de seus pensamentos.” – Marco Aurélio.
+    </p>
+
+    <p>Total de produtos @Model.produtos.Count</p>
+
+    <table class="table">
+        <thead>
+            <td>id</td>
+            <td>nome</td>
+            <td>valor</td>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model.produtos)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Valor</td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+</div>
